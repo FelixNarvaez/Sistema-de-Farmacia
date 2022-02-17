@@ -1,0 +1,44 @@
+﻿@page
+@model Farmacia.Pages.Empleados.DetalleModel
+@{
+
+  ViewData["Title"] = "Detalles de Empleado";
+
+}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-8 offset-2">
+
+      <h2 class="text-info">Detalle del  Empleado: @Html.DisplayFor(m => m.Empleado.Id)</h2>
+
+
+      <ul class="list-group">
+          <li class="list-group-item">ID: @Html.DisplayFor(m => m.Empleado.Id)</li>
+          <li class="list-group-item">Nombre: @Html.DisplayFor(m => m.Empleado.Nombre)</li>
+          <li class="list-group-item">Primer Apellido: @Html.DisplayFor(m => m.Empleado.ApellidoPaterno)</li>
+          <li class="list-group-item">Segundo Apellido: @Html.DisplayFor(m => m.Empleado.ApellidoMaterno)</li>
+          <li class="list-group-item">Direccion: @Html.DisplayFor(m => m.Empleado.Direccion)</li>
+          <li class="list-group-item">Telefono: @Html.DisplayFor(m => m.Empleado.Telefono)</li>
+          <li class="list-group-item">Email: @Html.DisplayFor(m => m.Empleado.Email)</li>
+      </ul>
+
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-6">
+
+      <a asp-page="Index" class="btn btn-success">volver</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+

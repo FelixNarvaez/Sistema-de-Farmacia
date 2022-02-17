@@ -1,0 +1,73 @@
+﻿@page
+@model Farmacia.Pages.Medicamentos.EditarModel
+@{
+
+    ViewData["Title"] = "Editar un Medicamento";
+
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Editar un Medicamento</h2>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Medicamento.Id" />
+
+
+                <div class="mb-3">
+
+                    <label asp-for="Medicamento.Nombre" class="form-label"></label>
+
+                    <input asp-for="Medicamento.Nombre" class="form-control" placeholder="Ingresa el nombre" />
+
+                    <span asp-validation-for="Medicamento.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Medicamento.ViaAdministracion" class="form-label"></label>
+
+                    <input asp-for="Medicamento.ViaAdministracion" class="form-control" placeholder="Via de Administracion" />
+
+                    <span asp-validation-for="Medicamento.ViaAdministracion" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Medicamento.FechaVencimiento" class="form-label"></label>
+
+                    <input asp-for="Medicamento.FechaVencimiento" class="form-control" />
+                    <span asp-validation-for="Medicamento.FechaVencimiento" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Editar Medicamento</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+
+}
+
+
+

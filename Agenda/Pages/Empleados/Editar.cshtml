@@ -1,0 +1,104 @@
+﻿@page
+@model Farmacia.Pages.Empleados.EditarModel
+@{
+
+    ViewData["Title"] = "Editar un Empleado";
+
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Editar un Empleado</h2>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Empleado.Id" />
+
+
+                <div class="mb-3">
+
+                    <label asp-for="Empleado.Nombre" class="form-label"></label>
+
+                    <input asp-for="Empleado.Nombre" class="form-control" placeholder="Ingresa el nombre" />
+
+                    <span asp-validation-for="Empleado.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Empleado.ApellidoPaterno" class="form-label"></label>
+
+                    <input asp-for="Empleado.ApellidoPaterno" class="form-control" placeholder="Ingresa el Primer Apellido" />
+
+                    <span asp-validation-for="Empleado.ApellidoPaterno" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Empleado.ApellidoMaterno" class="form-label"></label>
+
+                    <input asp-for="Empleado.ApellidoMaterno" class="form-control" placeholder="Ingresa el Segundo Nombre" />
+
+                    <span asp-validation-for="Empleado.ApellidoMaterno" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Empleado.Direccion" class="form-label"></label>
+
+                    <input asp-for="Empleado.Direccion" class="form-control" placeholder="Ingresa tu Direccion" />
+
+                    <span asp-validation-for="Empleado.Direccion" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Empleado.Telefono" class="form-label"></label>
+
+                    <input asp-for="Empleado.Telefono" class="form-control" placeholder="Ingresa Numero de Telefono" />
+
+                    <span asp-validation-for="Empleado.Telefono" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Empleado.Email" class="form-label"></label>
+
+                    <input asp-for="Empleado.Email" class="form-control"  placeholder="Ingrese su Email"/>
+                    <span asp-validation-for="Empleado.Email" class="text-danger"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Editar Empleado</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+
+}
+
+
+

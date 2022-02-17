@@ -1,0 +1,100 @@
+﻿@page
+@model Farmacia.Pages.Ventas.CrearModel
+@{
+
+    ViewData["Title"] = "Crear una Venta";
+
+}
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Crear una Nueva Venta</h2>
+
+            <form method="POST">
+                <div class="mb-3">
+
+                    <label asp-for="VentaVM.Ventas.Nombre" class="form-label"></label>
+
+                    <input asp-for="VentaVM.Ventas.Nombre" class="form-control" placeholder="Ingresa el nombre del cliente" />
+
+                    <span asp-validation-for="VentaVM.Ventas.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <!-- Aqui la lista de categiorias, medicamento y empleado-->
+
+                <div class="mb-3">
+
+                    <label asp-for="VentaVM.Ventas.Medicamento" class="form-label"></label>
+
+                    <select asp-for="VentaVM.Ventas.MedicamentoId" asp-items="@(new SelectList(Model.VentaVM.ListaMedicamento ,"Id","Nombre"))" class="form-control">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="VentaVM.Ventas.Categoria" class="form-label"></label>
+
+                    <select asp-for="VentaVM.Ventas.CategoriaId" asp-items="@(new SelectList(Model.VentaVM.ListaCategorias ,"Id","Nombre"))" class="form-control">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="VentaVM.Ventas.Empleado" class="form-label"></label>
+
+                    <select asp-for="VentaVM.Ventas.EmpleadoId" asp-items="@(new SelectList(Model.VentaVM.ListaEmpleados ,"Id","Nombre"))" class="form-control">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="VentaVM.Ventas.Precio" class="form-label"></label>
+
+                    <input asp-for="VentaVM.Ventas.Precio" class="form-control" placeholder="Precio" />
+
+                    <span asp-validation-for="VentaVM.Ventas.Precio" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="VentaVM.Ventas.FechaVenta" class="form-label"></label>
+
+                    <input asp-for="VentaVM.Ventas.FechaVenta" class="form-control" />
+                    <span asp-validation-for="VentaVM.Ventas.FechaVenta" class="text-danger"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear Venta</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+
+}
+

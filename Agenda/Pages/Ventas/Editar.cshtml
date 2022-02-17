@@ -1,0 +1,73 @@
+﻿@page
+@model Farmacia.Pages.Ventas.EditarModel
+@{
+
+    ViewData["Title"] = "Editar una Venta";
+
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Editar una Venta</h2>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Venta.Id" />
+
+
+                <div class="mb-3">
+
+                    <label asp-for="Venta.Nombre" class="form-label"></label>
+
+                    <input asp-for="Venta.Nombre" class="form-control" placeholder="Ingresa el nombre del Cliente" />
+
+                    <span asp-validation-for="Venta.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Venta.Precio" class="form-label"></label>
+
+                    <input asp-for="Venta.Precio" class="form-control" placeholder="Precio" />
+
+                    <span asp-validation-for="Venta.Precio" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Venta.FechaVenta" class="form-label"></label>
+
+                    <input asp-for="Venta.FechaVenta" class="form-control" />
+                    <span asp-validation-for="Venta.FechaVenta" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Editar Medicamento</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+
+}
+
+
+

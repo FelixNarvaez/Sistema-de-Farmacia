@@ -1,0 +1,97 @@
+﻿@page
+@model Farmacia.Pages.Empleados.CrearModel
+@{
+
+  ViewData["Title"] = "Crear un Empleado";
+
+}
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+           <div class="text-info">Crear un Nuevo Empleado</div>
+
+           <form method="POST">
+               <div class="mb-3">
+
+                   <label asp-for="Empleado.Nombre" class="form-label"></label>
+
+                   <input asp-for="Empleado.Nombre" class="form-control" placeholder="Ingresa el nombre" />
+
+                   <span asp-validation-for="Empleado.Nombre" class="text-danger"></span>
+
+               </div>
+
+               <div class="mb-3">
+
+                   <label asp-for="Empleado.ApellidoPaterno" class="form-label"></label>
+
+                   <input asp-for="Empleado.ApellidoPaterno" class="form-control" placeholder="Ingrese el apellido paterno" />
+
+                   <span asp-validation-for="Empleado.ApellidoPaterno" class="text-danger"></span>
+
+               </div>
+               <div class="mb-3">
+
+                   <label asp-for="Empleado.ApellidoMaterno" class="form-label"></label>
+
+                   <input asp-for="Empleado.ApellidoMaterno" class="form-control" placeholder="Ingrese el apellido materno" />
+
+                   <span asp-validation-for="Empleado.ApellidoMaterno" class="text-danger"></span>
+
+               </div>
+
+               <div class="mb-3">
+
+                   <label asp-for="Empleado.Direccion" class="form-label"></label>
+
+                   <input asp-for="Empleado.Direccion" class="form-control" placeholder="Ingrese la Direccion" />
+
+                   <span asp-validation-for="Empleado.Direccion" class="text-danger"></span>
+
+               </div>
+
+               <div class="mb-3">
+
+                   <label asp-for="Empleado.Telefono" class="form-label"></label>
+
+                   <input asp-for="Empleado.Telefono" class="form-control" placeholder="Ingrese el Telefono" />
+
+                   <span asp-validation-for="Empleado.Telefono" class="text-danger"></span>
+
+               </div>
+
+               <div class="mb-3">
+
+                   <label asp-for="Empleado.Email" class="form-label"></label>
+
+                   <input asp-for="Empleado.Email" class="form-control" placeholder="Ingrese el Email"/>
+                   <span asp-validation-for="Empleado.Email" class="text-danger"></span>
+
+               </div>
+
+               <button type="submit" class="btn btn-primary">Crear Empleado</button>
+
+           </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+    </div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+
+
+}
+    

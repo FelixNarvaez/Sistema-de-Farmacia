@@ -1,0 +1,79 @@
+﻿@page
+@model Farmacia.Pages.Categorias.BorrarModel
+@{
+
+    ViewData["Title"] = "Borrar  una Categoria";
+
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Borrar una  Categoría</h2>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Categoria.Id" />
+
+
+                <div class="mb-3">
+
+                    <label asp-for="Categoria.Nombre" class="form-label"></label>
+
+                    <input asp-for="Categoria.Nombre" class="form-control" placeholder="Ingresa el nombre de la catrgoría" readonly />
+
+                    <span asp-validation-for="Categoria.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Categoria.DescripcionCategoria" class="form-label"></label>
+
+                    <input asp-for="Categoria.DescripcionCategoria" class="form-control" placeholder="Descripcion de la categoría" readonly />
+
+                    <span asp-validation-for="Categoria.DescripcionCategoria" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Categoria.Laboratorio" class="form-label"></label>
+
+                    <input asp-for="Categoria.Laboratorio" class="form-control" placeholder="Laboratorio" readonly />
+
+                    <span asp-validation-for="Categoria.Laboratorio" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Categoria.FechaCreacion" class="form-label"></label>
+
+                    <input asp-for="Categoria.FechaCreacion" class="form-control" readonly />
+                    <span asp-validation-for="Categoria.FechaCreacion" class="text-danger"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Borrar categoría</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
