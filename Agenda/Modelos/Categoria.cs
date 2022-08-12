@@ -31,6 +31,7 @@ namespace Farmacia.Modelos
         [DataType(DataType.Date)]
         [Display(Name = "Fecha de Creacion")]
         public DateTime? FechaCreacion { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

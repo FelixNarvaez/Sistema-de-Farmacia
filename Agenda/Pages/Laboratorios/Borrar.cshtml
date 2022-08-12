@@ -1,0 +1,78 @@
+﻿@page
+@model Farmacia.Pages.Laboratorios.BorrarModel
+@{
+
+    ViewData["Title"] = "Borrar  un Laboratorio";
+
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Borrar un Laboratorio</h2>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Laboratorio.Id" />
+
+
+                <div class="mb-3">
+
+                    <label asp-for="Laboratorio.Nombre" class="form-label"></label>
+
+                    <input asp-for="Laboratorio.Nombre" class="form-control" placeholder="Ingresa el nombre" readonly />
+
+                    <span asp-validation-for="Laboratorio.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Laboratorio.Telefono" class="form-label"></label>
+
+                    <input asp-for="Laboratorio.Telefono" class="form-control" placeholder="Ingrese Numero de Telefono" readonly />
+
+                    <span asp-validation-for="Laboratorio.Telefono" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3">
+
+                    <label asp-for="Laboratorio.Direccion" class="form-label"></label>
+
+                    <input asp-for="Laboratorio.Direccion" class="form-control" placeholder="Ingresa su Direccion" readonly />
+
+                    <span asp-validation-for="Laboratorio.Direccion" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Laboratorio.Email" class="form-label"></label>
+
+                    <input asp-for="Laboratorio.Email" class="form-control" placeholder="Ingrese su Email" readonly />
+                    <span asp-validation-for="Laboratorio.Email" class="text-danger"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Borrar Laboratorio</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+

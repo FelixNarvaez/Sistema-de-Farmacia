@@ -1,0 +1,99 @@
+﻿@page
+@model Farmacia.Pages.Laboratorios.IndexModel
+@{
+
+    ViewData["Title"] = "Lista de Laboratorios";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-9">
+
+            <h2 class="text-info">Lista de Laboratorios Eliminados</h2>
+
+        </div>
+
+        
+    </div>
+
+    @if (Model.Laboratorios.Count() > 0)
+    {
+
+        <table id="tblLaboratorios" class="table table-striped table-bordered" style="width: 100%;">
+
+            <thead>
+
+                <tr>
+
+                    <th></th>
+
+                    <th> @Html.DisplayNameFor(m => m.Laboratorios.FirstOrDefault().Nombre)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Laboratorios.FirstOrDefault().Telefono)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Laboratorios.FirstOrDefault().Direccion)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Laboratorios.FirstOrDefault().Email)</th>
+
+                   
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                @foreach (var laboratorio in Model.Laboratorios)
+                {
+                    if (laboratorio.Estado==false)
+                    {
+                        <p></p>
+                    }
+                    else { 
+
+                <tr>
+
+                    <td>@Html.DisplayFor(m => laboratorio.Id)</td>
+
+                    <td>@Html.DisplayFor(m => laboratorio.Nombre)</td>
+                    <td>@Html.DisplayFor(m => laboratorio.Telefono)</td>
+                    <td>@Html.DisplayFor(m => laboratorio.Direccion)</td>
+                    <td>@Html.DisplayFor(m => laboratorio.Email)</td>
+
+                    
+
+                </tr>
+                    }
+
+                }
+
+            </tbody>
+
+        </table>
+    }
+
+    else
+    {
+
+        <p> No hay Laboratorios </p>
+
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+

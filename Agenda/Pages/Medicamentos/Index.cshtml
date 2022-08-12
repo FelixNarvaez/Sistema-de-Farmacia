@@ -29,8 +29,8 @@
 
             <thead>
                 <tr>
-
-                    <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Id)</th>
+                    <th></th>
+                    @*<th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Id)</th>*@
 
                     <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Nombre)</th>
 
@@ -40,9 +40,9 @@
 
                     <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Categoria)</th>
 
-                    @*<th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Categoria)</th>*@
+                    @*<th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Laboratorio)</th>*@
 
-                    <th></th>
+                    <th>Laboratorio</th>
 
                 </tr>
             </thead>
@@ -51,6 +51,13 @@
 
                 @foreach (var Medicamento in Model.Medicamentos)
                 {
+                    if(Medicamento.Estado ==true)
+                    {
+
+                        <p></p>
+<p></p>
+                    }
+                    else { 
 
                 <tr>
 
@@ -77,7 +84,7 @@
                     </td>
 
                 </tr>
-
+                    }
 
                 }
 

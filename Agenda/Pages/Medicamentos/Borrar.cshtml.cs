@@ -42,7 +42,9 @@ namespace Farmacia.Pages.Medicamentos
                     return NotFound();
                 }
 
-                _contexto.Medicamento.Remove(MedicamentoDesdeDb);
+                _contexto.Medicamento.Update(MedicamentoDesdeDb);
+            MedicamentoDesdeDb.Estado = true;
+            Medicamento.Estado = true;
                 await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
 

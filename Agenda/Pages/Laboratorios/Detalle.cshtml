@@ -1,0 +1,42 @@
+﻿@page
+@model Farmacia.Pages.Laboratorios.DetalleModel
+@{
+
+  ViewData["Title"] = "Detalles del Laboratorio";
+
+}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-8 offset-2">
+
+        <h2 class="text-info">Detalle del  Laboratorio: @Html.DisplayFor(m => m.Laboratorio.Id)</h2>
+
+
+        <ul class="list-group">
+            <li class="list-group-item">ID: @Html.DisplayFor(m => m.Laboratorio.Id)</li>
+            <li class="list-group-item">Nombre: @Html.DisplayFor(m => m.Laboratorio.Nombre)</li>
+            <li class="list-group-item">Telefono: @Html.DisplayFor(m => m.Laboratorio.Telefono)</li>
+            <li class="list-group-item">Direccion: @Html.DisplayFor(m => m.Laboratorio.Direccion)</li>
+            <li class="list-group-item">Email: @Html.DisplayFor(m => m.Laboratorio.Email)</li>
+        </ul>
+
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-6">
+
+      <a asp-page="Index" class="btn btn-success">volver</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+

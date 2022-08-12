@@ -1,0 +1,90 @@
+﻿@page
+@model Farmacia.Pages.Medicamentos.IndexModel
+@{
+
+    ViewData["Title"] = "Lista de Medicamentos";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-9">
+
+            <h2 class="text-info">Lista de Medicamentos Eliminados</h2>
+
+        </div>
+
+       
+    </div>
+
+    @if (Model.Medicamentos.Count() > 0)
+    {
+
+        <table id="tblMedicamentos" class="table table-striped table-bordered" style="width: 100%;">
+
+            <thead>
+                <tr>
+                    <th></th>
+                    @*<th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Id)</th>*@
+
+                    <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Nombre)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().ViaAdministracion)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().FechaVencimiento)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Categoria)</th>
+
+                    @*<th> @Html.DisplayNameFor(m => m.Medicamentos.FirstOrDefault().Laboratorio)</th>*@
+
+                    <th>Laboratorio</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var Medicamento in Model.Medicamentos)
+                {
+                    if(Medicamento.Estado==false)
+                    {
+
+                        <p></p>
+<p></p>
+                    }
+                    else { 
+                <tr>
+
+                    <td>@Html.DisplayFor(m => Medicamento.Id)</td>
+
+                    <td>@Html.DisplayFor(m => Medicamento.Nombre)</td>
+
+                    <td>@Html.DisplayFor(m => Medicamento.ViaAdministracion)</td>
+
+                    <td>@Html.DisplayFor(m => Medicamento.FechaVencimiento)</td>
+
+                    <td>@Html.DisplayFor(m => Medicamento.Categoria.Nombre)</td>
+
+                    <td>@Html.DisplayFor(m => Medicamento.Categoria.Laboratorio)</td>
+
+                    
+                </tr>
+                    }
+
+                }
+
+            </tbody>
+
+        </table>
+    }
+
+    else
+    {
+
+        <p> No hay Medicamentos </p>
+
+    }
+</div>
+
+

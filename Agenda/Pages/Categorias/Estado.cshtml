@@ -1,0 +1,98 @@
+﻿@page
+@model Farmacia.Pages.Categorias.IndexModel
+@{
+
+    ViewData["Title"] = "Lista de Categorías";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-9">
+
+            <h2 class="text-info">Lista de Categorías Eliminadas</h2>
+
+        </div>
+
+        
+    </div>
+
+    @if (Model.Categorias.Count() > 0)
+    {
+
+        <table id="tblCategorias" class="table table-striped table-bordered" style="width: 100%;">
+
+            <thead>
+
+                <tr>
+                    <th></th>
+                    @*<th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().Id)</th>*@
+
+                    <th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().Nombre)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().DescripcionCategoria)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().Laboratorio)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().FechaCreacion)</th>
+
+                   
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                @foreach (var categoria in Model.Categorias)
+                {
+                    if (categoria.Estado == false)
+                    {
+                        <P></P>
+                    }
+                    else { 
+
+                <tr>
+
+                    <td>@Html.DisplayFor(m => categoria.Id)</td>
+                    <td>@Html.DisplayFor(m => categoria.Nombre)</td>
+                    <td>@Html.DisplayFor(m => categoria.DescripcionCategoria)</td>
+                    <td>@Html.DisplayFor(m => categoria.Laboratorio)</td>
+                    <td>@Html.DisplayFor(m => categoria.FechaCreacion)</td>
+
+                   
+                </tr>
+                    }
+
+                }
+
+            </tbody>
+
+        </table>
+    }
+
+    else
+    {
+
+        <p> No hay Categorías </p>
+
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+

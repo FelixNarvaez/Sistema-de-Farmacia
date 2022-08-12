@@ -23,7 +23,10 @@ namespace Farmacia.Datos
         public DbSet<Medicamento> Medicamento { get; set; }
 
         public DbSet<Venta> Venta { get; set; }
-        
+        public DbSet<Compra> Compra { get; set; }
+        public DbSet<Laboratorio> Laboratorio { get; set; }
+        public DbSet<Usario> Usario { get; set; }
+
 
     }
 

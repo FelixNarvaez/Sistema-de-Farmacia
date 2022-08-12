@@ -30,8 +30,8 @@
             <thead>
 
                 <tr>
-
-                    <th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().Id)</th>
+                    <th></th>
+                    @*<th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().Id)</th>*@
 
                     <th> @Html.DisplayNameFor(m => m.Categorias.FirstOrDefault().Nombre)</th>
 
@@ -51,27 +51,31 @@
 
                 @foreach (var categoria in Model.Categorias)
                 {
+                    if (categoria.Estado == true)
+                    {
+                        <p></p>
+                    }
+                    else { 
+                    <tr>
 
-                <tr>
+                        <td>@Html.DisplayFor(m => categoria.Id)</td>
+                        <td>@Html.DisplayFor(m => categoria.Nombre)</td>
+                        <td>@Html.DisplayFor(m => categoria.DescripcionCategoria)</td>
+                        <td>@Html.DisplayFor(m => categoria.Laboratorio)</td>
+                        <td>@Html.DisplayFor(m => categoria.FechaCreacion)</td>
 
-                    <td>@Html.DisplayFor(m => categoria.Id)</td>
+                        <td>
 
-                    <td>@Html.DisplayFor(m => categoria.Nombre)</td>
-                    <td>@Html.DisplayFor(m => categoria.DescripcionCategoria)</td>
-                    <td>@Html.DisplayFor(m => categoria.Laboratorio)</td>
-                    <td>@Html.DisplayFor(m => categoria.FechaCreacion)</td>
+                            <a class="btn btn-success" asp-page="../Categorias/Detalle" asp-route-id="@categoria.Id">Detalle</a>
 
-                    <td>
+                            <a class="btn btn-warning" asp-page="../Categorias/Editar" asp-route-id="@categoria.Id">Editar</a>
 
-                        <a class="btn btn-success" asp-page="../Categorias/Detalle" asp-route-id="@categoria.Id">Detalle</a>
+                            <a class="btn btn-danger" asp-page="../Categorias/Borrar" asp-route-id="@categoria.Id">Borrar</a>
 
-                        <a class="btn btn-warning" asp-page="../Categorias/Editar" asp-route-id="@categoria.Id">Editar</a>
+                        </td>
 
-                        <a class="btn btn-danger" asp-page="../Categorias/Borrar" asp-route-id="@categoria.Id">Borrar</a>
-
-                    </td>
-
-                </tr>
+                    </tr>
+                    }
 
                 }
 

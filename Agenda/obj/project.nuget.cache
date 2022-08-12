@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MCqZlG9Rv6Pu7F7TeeRqcHiO0i+NLWaxnZnGmEmrWBfNM5cXiDIiOjs7zVZCdYK+TCqCS0R9ENuMh/OtTP50jw==",
+  "dgSpecHash": "qo/duU79FxEbofHbv9x0qBNx78e7tZb5JF3t22vE6Tx2lpLOR/j3RjkultW47v+1SOK6sFCtpDb75rcpI0Sf4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Desktop\\SistemaFarmacia\\Farmacia\\Agenda\\Farmacia.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\Desktop\\Farmacia\\Agenda\\Farmacia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.9\\microsoft.aspnetcore.mvc.razor.extensions.5.0.9.nupkg.sha512",

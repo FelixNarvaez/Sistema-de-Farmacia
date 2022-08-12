@@ -29,7 +29,7 @@
 
                 <div class="mb-3">
 
-                    <label asp-for="MedicamentoVM.Medicamento.ViaAdministracion" class="form-label"></label>
+                    <label asp-for="MedicamentoVM.Medicamento.ViaAdministracion" class="form-label">Via de Administracion</label>
 
                     <input asp-for="MedicamentoVM.Medicamento.ViaAdministracion" class="form-control" placeholder="Via de Administracion" />
 
@@ -51,7 +51,7 @@
 
                 <div class="mb-3">
 
-                    <label asp-for="MedicamentoVM.Medicamento.Categoria" class="form-label"></label>
+                    <label asp-for="MedicamentoVM.Medicamento.Categoria" class="form-label">Laboratorio</label>
 
                     <select asp-for="MedicamentoVM.Medicamento.CategoriaId" asp-items="@(new SelectList(Model.MedicamentoVM.ListaCategorias ,"Id","Laboratorio"))" class="form-control">
                     </select>

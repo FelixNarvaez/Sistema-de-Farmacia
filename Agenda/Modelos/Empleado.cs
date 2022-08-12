@@ -33,6 +33,7 @@ namespace Farmacia.Modelos
         [Required(ErrorMessage = "El Email es Obligatorio ")]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

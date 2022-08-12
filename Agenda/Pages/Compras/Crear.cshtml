@@ -1,0 +1,110 @@
+﻿@page
+@model Farmacia.Pages.Compras.CrearModel
+@{
+
+    ViewData["Title"] = "Crear una Compra";
+
+}
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Crear una Nueva Compra</h2>
+
+            <form method="POST">
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.Nombre" class="form-label"></label>
+
+                    <input asp-for="CompraVM.Compras.Nombre" class="form-control" placeholder="Ingresa el nombre del vendedor" />
+
+                    <span asp-validation-for="CompraVM.Compras.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <!-- Aqui la lista de categiorias, medicamento y empleado-->
+
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.Laboratorio" class="form-label"></label>
+
+                    <select asp-for="CompraVM.Compras.LaboratorioId" asp-items="@(new SelectList(Model.CompraVM.ListaLaboratorio ,"Id","Nombre"))" class="form-control">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.Categoria" class="form-label"></label>
+
+                    <select asp-for="CompraVM.Compras.CategoriaId" asp-items="@(new SelectList(Model.CompraVM.ListaCategorias ,"Id","Nombre"))" class="form-control">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.Empleado" class="form-label"></label>
+
+                    <select asp-for="CompraVM.Compras.EmpleadoId" asp-items="@(new SelectList(Model.CompraVM.ListaEmpleados ,"Id","Nombre"))" class="form-control">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.Precio" class="form-label"></label>
+
+                    <input asp-for="CompraVM.Compras.Precio" class="form-control" placeholder="Precio" />
+
+                    <span asp-validation-for="CompraVM.Compras.Precio" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.Cantidad" class="form-label"></label>
+
+                    <input asp-for="CompraVM.Compras.Cantidad" class="form-control" placeholder="Cantidad" />
+
+                    <span asp-validation-for="CompraVM.Compras.Cantidad" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="CompraVM.Compras.FechaCompra" class="form-label"></label>
+
+                    <input asp-for="CompraVM.Compras.FechaCompra" class="form-control" />
+                    <span asp-validation-for="CompraVM.Compras.FechaCompra" class="text-danger"></span>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear Compra</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+
+}
+

@@ -1,0 +1,79 @@
+﻿@page
+@model Farmacia.Pages.Laboratorios.CrearModel
+@{
+
+  ViewData["Title"] = "Crear un Laboratorio";
+
+}
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <div class="text-info">Crear un Nuevo Laboratorio</div>
+
+           <form method="POST">
+               <div class="mb-3">
+
+                   <label asp-for="Laboratorio.Nombre" class="form-label"></label>
+
+                   <input asp-for="Laboratorio.Nombre" class="form-control" placeholder="Ingresa el nombre" />
+
+                   <span asp-validation-for="Laboratorio.Nombre" class="text-danger"></span>
+
+               </div>
+
+               <div class="mb-3">
+
+                   <label asp-for="Laboratorio.Telefono" class="form-label"></label>
+
+                   <input asp-for="Laboratorio.Telefono" class="form-control" placeholder="Ingrese numero de telefono" />
+
+                   <span asp-validation-for="Laboratorio.Telefono" class="text-danger"></span>
+
+               </div>
+
+               <div class="mb-3">
+
+                   <label asp-for="Laboratorio.Direccion" class="form-label"></label>
+
+                   <input asp-for="Laboratorio.Direccion" class="form-control" placeholder="Ingrese la Direccion" />
+
+                   <span asp-validation-for="Laboratorio.Direccion" class="text-danger"></span>
+
+               </div>
+
+
+               <div class="mb-3">
+
+                   <label asp-for="Laboratorio.Email" class="form-label"></label>
+
+                   <input asp-for="Laboratorio.Email" class="form-control" placeholder="Ingrese el Email"/>
+                   <span asp-validation-for="Laboratorio.Email" class="text-danger"></span>
+
+               </div>
+
+               <button type="submit" class="btn btn-primary">Crear Laboratorio</button>
+
+           </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+    </div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+
+
+}
+    

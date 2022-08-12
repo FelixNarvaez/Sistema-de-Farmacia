@@ -12,7 +12,7 @@ namespace Farmacia.Modelos.ViewModels
         
         public Medicamento Medicamento { get; set; }
         
-        //public Ventas ventas { get; set; }
+       //public Laboratorio Laboratorio { get; set; }
 
        
 

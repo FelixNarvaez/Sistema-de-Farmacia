@@ -1,0 +1,105 @@
+﻿@page
+@model Farmacia.Pages.Empleados.IndexModel
+@{
+
+    ViewData["Title"] = "Lista de Empleados";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-9">
+
+            <h2 class="text-info">Lista de Empleados Eliminados</h2>
+
+        </div>
+
+    </div>
+
+    @if (Model.Empleados.Count() > 0)
+    {
+
+        <table id="tblEmpleados" class="table table-striped table-bordered" style="width: 100%;">
+
+            <thead>
+
+                <tr>
+                    <th></th>
+                    @*<th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Id)</th>*@
+
+                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Nombre)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().ApellidoPaterno)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().ApellidoMaterno)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Direccion)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Telefono)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Email)</th>
+
+                   
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                @foreach (var empleado in Model.Empleados)
+                {
+                    if (empleado.Estado == false)
+                    {
+                        <p></p>
+                    }
+                    else { 
+
+                <tr>
+
+                    <td>@Html.DisplayFor(m => empleado.Id)</td>
+
+                    <td>@Html.DisplayFor(m => empleado.Nombre)</td>
+                    <td>@Html.DisplayFor(m => empleado.ApellidoPaterno)</td>
+                    <td>@Html.DisplayFor(m => empleado.ApellidoMaterno)</td>
+                    <td>@Html.DisplayFor(m => empleado.Direccion)</td>
+                    <td>@Html.DisplayFor(m => empleado.Telefono)</td>
+                    <td>@Html.DisplayFor(m => empleado.Email)</td>
+
+                  
+
+                </tr>
+                    }
+
+                }
+
+            </tbody>
+
+        </table>
+    }
+
+    else
+    {
+
+        <p> No hay Empleados </p>
+
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+

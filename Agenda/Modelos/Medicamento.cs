@@ -21,11 +21,14 @@ namespace Farmacia.Modelos
         [DataType(DataType.Date)]
         [Display(Name = "Fecha de Vencimiento")]
         public DateTime? FechaVencimiento { get; set; }
-//estas 3 lineas de codigo hay una relacion de uno a mucho una categoria tiene muchos contactos
+//estas 2 lineas de codigo hay una relacion de uno a mucho una categoria tiene muchos contactos
         [Required]
         public int CategoriaId { get; set; }
+        //public int LaboratorioId { get; set; }
 
         public Categoria Categoria { get; set; }
+        //public Laboratorio Laboratorio { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

@@ -20,11 +20,12 @@ namespace Farmacia.Pages.Categorias
     }
 
     public IEnumerable<Categoria> Categorias { get; set; }
+        
 
     public async Task OnGet()
     {
       Categorias = await _contexto.Categoria.ToListAsync();
-
+      
 
     }
 

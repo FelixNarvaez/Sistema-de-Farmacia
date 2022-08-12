@@ -30,8 +30,8 @@
             <thead>
 
                 <tr>
-
-                    <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Id)</th>
+                    <th></th>
+                    @*<th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Id)</th>*@
 
                     <th> @Html.DisplayNameFor(m => m.Empleados.FirstOrDefault().Nombre)</th>
 
@@ -55,7 +55,13 @@
 
                 @foreach (var empleado in Model.Empleados)
                 {
+                    if(empleado.Estado ==true)
+                    {
 
+
+<p></p>
+                    }
+                    else {
                 <tr>
 
                     <td>@Html.DisplayFor(m => empleado.Id)</td>
@@ -78,6 +84,7 @@
                     </td>
 
                 </tr>
+                    }
 
                 }
 

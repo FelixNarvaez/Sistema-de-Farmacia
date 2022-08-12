@@ -1,0 +1,110 @@
+﻿@page
+@model Farmacia.Pages.Compras.IndexModel
+@{
+
+    ViewData["Title"] = "Lista de Compras";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-9">
+
+            <h2 class="text-info">Lista de Compras</h2>
+
+        </div>
+
+        <div class="col-3">
+
+            <a class="btn btn-secondary" asp-page="/Compras/Crear">Crear Nueva Compra</a>
+
+        </div>
+    </div>
+
+    @if (Model.Compras.Count() > 0)
+    {
+
+        <table id="tblCompras" class="table table-striped table-bordered" style="width: 100%;">
+
+            <thead>
+                <tr>
+                    <th></th>
+
+                    @*<th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Id)</th>*@
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Nombre)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Precio)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().FechaCompra)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Cantidad)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Laboratorio)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Categoria)</th>
+
+                    <th> @Html.DisplayNameFor(m => m.Compras.FirstOrDefault().Empleado)</th>
+
+
+
+                    <th></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var Compra in Model.Compras)
+                {
+
+                <tr>
+
+                    <td>@Html.DisplayFor(m => Compra.Id)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.Nombre)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.Precio)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.FechaCompra)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.Cantidad)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.Laboratorio.Nombre)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.Categoria.Nombre)</td>
+
+                    <td>@Html.DisplayFor(m => Compra.Empleado.Nombre)</td>
+
+
+
+                    <td>
+
+                        @*<a class="btn btn-success" asp-page="../Compras/Detalle" asp-route-id="@Compra.Id">Detalle</a>*@
+
+                        <a class="btn btn-warning" asp-page="../Compras/Editar" asp-route-id="@Compra.Id">Editar</a>
+
+                        <a class="btn btn-danger" asp-page="../Compras/Borrar" asp-route-id="@Compra.Id">Borrar</a>
+
+                    </td>
+
+                </tr>
+
+
+                }
+
+            </tbody>
+
+        </table>
+    }
+
+    else
+    {
+
+        <p> No hay Compras </p>
+
+    }
+</div>
+
+

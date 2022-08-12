@@ -1,0 +1,84 @@
+﻿@page
+@model Farmacia.Pages.Compras.EditarModel
+@{
+
+    ViewData["Title"] = "Editar una Compra";
+
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-8 offset-2">
+
+            <h2 class="text-info">Editar una Compra</h2>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Compra.Id" />
+
+
+                <div class="mb-3">
+
+                    <label asp-for="Compra.Nombre" class="form-label"></label>
+
+                    <input asp-for="Compra.Nombre" class="form-control" placeholder="Ingresa el nombre del vendedor" />
+
+                    <span asp-validation-for="Compra.Nombre" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Compra.Precio" class="form-label"></label>
+
+                    <input asp-for="Compra.Precio" class="form-control" placeholder="Precio" />
+
+                    <span asp-validation-for="Compra.Precio" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Compra.Cantidad" class="form-label"></label>
+
+                    <input asp-for="Compra.Cantidad" class="form-control" placeholder="Cantidad" />
+
+                    <span asp-validation-for="Compra.Cantidad" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Compra.FechaCompra" class="form-label"></label>
+
+                    <input asp-for="Compra.FechaCompra" class="form-control" />
+                    <span asp-validation-for="Compra.FechaCompra" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Editar Compra</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+
+            <a asp-page="Index" class="btn btn-success">volver</a>
+        </div>
+    </div>
+
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+
+}
+
+
+

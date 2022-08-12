@@ -41,9 +41,11 @@ namespace Farmacia.Pages.Empleados
                 {
                     return NotFound();
                 }
-
-                _contexto.Empleado.Remove(EmpleadoDesdeDb);
-                await _contexto.SaveChangesAsync();
+                
+                _contexto.Empleado.Update(EmpleadoDesdeDb);
+                EmpleadoDesdeDb.Estado = true;
+                Empleado.Estado = true;
+            await _contexto.SaveChangesAsync();
                 return RedirectToPage("Index");
 
         }
